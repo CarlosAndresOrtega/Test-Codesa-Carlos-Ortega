@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+@import "../../../../app.component.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Raleway, sans-serif;
+}
+.container {
+  background: $background;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.login {
+  color: white;
+  margin: auto;
+  padding: 50px;
+  gap: 20px;
+  background: $background;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 9px 9px 16px $shadowColor1, -9px -9px 16px $lightColor1;
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .company {
+      font-size: 2.2em;
+    }
+  }
+  .msg {
+    text-align: center;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input[type="text"].text,
+    input[type="password"].password {
+      border: none;
+      height: 30px;
+      border-radius: 50em;
+      background: $lightColor1;
+      box-shadow: inset -2px -2px 6px $lightColor2,
+        inset -2px -2px 6px $lightColor2, inset 2px 2px 6px $shadowColor2,
+        inset 2px 2px 6px $shadowColor2;
+      width: 100%;
+      color: $textColor;
+      font-size: 1em;
+      outline: none;
+      text-align: center;
+
+      &::placeholder {
+        color: #d3d3d3;
+        text-align: center;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .btn-login {
+      background: none;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      color: white;
+      background: $shadowColor1;
+      box-shadow: -8px -8px 20px 0px $lightColor3,
+        -6px -6px 20px 0px $lightColor3, 8px 8px 20px $shadowColor3,
+        5px 5px 6px 0px $shadowColor3;
+      border-radius: 50em;
+      padding: 5px 2em;
+      transition: 0.5s;
+
+      &:active {
+        box-shadow: inset -8px -8px 20px $lightColor3,
+          inset -5px -5px 6px $lightColor3, inset 8px 8px 20px $shadowColor3,
+          inset 5px 5px 6px $shadowColor3;
+      }
+    }
+  }
+
+  .forgot {
+    text-decoration: none;
+    color: white;
+    float: right;
+  }
+}

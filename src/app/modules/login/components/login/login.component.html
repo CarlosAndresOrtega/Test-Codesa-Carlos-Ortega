@@ -1,0 +1,18 @@
+<div class="container">
+	<section class='login' id='login'>
+		<div class='head'>
+			<h1 class='company'>Bienvenidos</h1>
+		</div>
+		<p class='msg'>Ingresa tu usuario</p>
+		<div class='form'>
+			<form (ngSubmit)="onSubmit()">
+				<input type="text" placeholder='Usuario' class='text' id="username" name="username" required
+					[(ngModel)]="username"><br>
+				<input type="password" placeholder='Contraseña' class='password' id="password" name="password"
+					[(ngModel)]="password" required><br>
+				<button href="#" class='btn-login' id='do-login' type="submit">Ingresar</button>
+			</form>
+		</div>
+	</section>
+</div>
+

@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
+
+$background: linear-gradient(#424750, #202326);
+$textColor: #fff;
+
+$lightColor1: #2f353a;
+$lightColor2: #485057;
+$lightColor3: #262e32;
+$lightColor4: #6b7279;
+
+$shadowColor1: #1c1f22;
+$shadowColor2: #1f2427;
+$shadowColor3: #101012;
+$shadowColor4: #141415;
+
+$blueLight: #11a8fd;
+$blueDark: #005ea3;
+
+$--background: #e0e5ec;
+$--gray: #797d7f;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif; 
+}
+

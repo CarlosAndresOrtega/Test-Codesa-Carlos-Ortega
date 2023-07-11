@@ -1,0 +1,20 @@
+@import "../../../../app.component.scss";
+
+
+app-header{
+    width: 100%;
+    height: auto;
+    background: $background;
+    position: relative;
+}
+.container {
+    background: $background;
+    color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
