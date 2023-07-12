@@ -15,20 +15,16 @@ $link-hover-color: #f8b500;
   height: $nav-height;
   background: linear-gradient(45deg, #424750, #202326);
   box-shadow: 9px 9px 16px $shadowColor1, -9px -9px 16px $lightColor1;
-
+  border-radius: 12px 12px 0px 0px;
   .nav-container {
     max-width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     .brand {
-      padding-left: 20px;
-      // float: left;
-      // line-height: $nav-height;
       text-transform: uppercase;
       font-size: 1.4em;
-
       a {
         color: white;
       }
@@ -38,7 +34,7 @@ $link-hover-color: #f8b500;
     }
     .leave {
       font-size: 25px;
-      margin-right: 30px;
+      // margin-right: 30px;
       cursor: pointer;
       border-radius: 50%;
       display: flex;
@@ -48,14 +44,52 @@ $link-hover-color: #f8b500;
       min-width: 50px;
       min-height: 50px;
       background: $shadowColor1;
-      box-shadow: -8px -8px 20px 0px $lightColor3,
-        -6px -6px 20px 0px $lightColor3, 8px 8px 20px $shadowColor3,
-        5px 5px 6px 0px $shadowColor3;
+      box-shadow: -4px -4px 10px 0px $lightColor3,
+        -2px -2px 10px 0px $lightColor3, 4px 4px 10px $shadowColor3,
+        2px 2px 6px 0px $shadowColor3;
 
       &:active {
         box-shadow: inset -8px -8px 20px $lightColor3,
           inset -5px -5px 6px $lightColor3, inset 8px 8px 20px $shadowColor3,
           inset 5px 5px 6px $shadowColor3;
+      }
+    }
+    .add {
+      font-size: 25px;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $textColor;
+      min-width: 50px;
+      min-height: 50px;
+      background: linear-gradient(to bottom right, $blueLight, $blueDark);
+      box-shadow: -4px -4px 10px 0px $lightColor2,
+        -2px -2px 10px 0px $lightColor2, 4px 4px 10px $shadowColor2,
+        2px 2px 6px 0px $shadowColor2;
+
+      &:active {
+        box-shadow: inset -8px -8px 20px $lightColor2,
+          inset -5px -5px 6px $lightColor2, inset 8px 8px 20px $shadowColor2,
+          inset 5px 5px 6px $shadowColor2;
+      }
+      .btnInsideBlue {
+        font-size: 25px;
+        transition: 0.5s;
+        border-radius: 50%;
+        background: none;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        width: 45px;
+        color: $textColor;
+        box-shadow: none;
+        background: linear-gradient(to bottom right, $blueDark, $blueLight);
       }
     }
   }

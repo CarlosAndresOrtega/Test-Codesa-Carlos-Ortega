@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User, UserResponse } from '../../shared/models/user.interface';
+import { userLogin } from '../../shared/models/user.interface';
 import { Observable, catchError, map,throwError,of, BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   login(username: string, password: string): Observable<any> {
-    const user: User = { username: username, password: password };
+    const user: userLogin = { username: username, password: password };
     localStorage.setItem(this.localStorageKey, JSON.stringify(user));
     this.router.navigate(['/dashboard/']);
     this.loggedIn$.next(true);
@@ -41,7 +41,7 @@ export class AuthService {
     }
   }
 
-  getCurrentUser(): User | null {
+  getCurrentUser(): userLogin | null {
     const userString = localStorage.getItem(this.localStorageKey);
     if (userString) {
       return JSON.parse(userString);

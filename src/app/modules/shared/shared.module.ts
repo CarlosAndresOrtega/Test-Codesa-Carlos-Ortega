@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { checkLoginGuard } from './guards/check-login.guard';
-import { CheckDataService } from './services/checkData/check-data.service';
+import { UserService } from './services/User/user.service';
 
 
 
@@ -10,7 +10,7 @@ import { CheckDataService } from './services/checkData/check-data.service';
   imports: [
     CommonModule
   ],
-  providers:[CheckDataService],
+  providers:[ UserService],
   exports:[]
 })
 export class SharedModule { }

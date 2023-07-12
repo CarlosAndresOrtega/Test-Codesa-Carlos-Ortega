@@ -1,16 +1,16 @@
 
 <section class="navigation">
     <div class="nav-container">
+        <div class="add" (click)="addUser()">
+            <div class="btnInsideBlue">
+                <fa-icon [icon]="faUserPlus"></fa-icon>
+            </div>
+        </div>
         <div class="brand">
             <a>Lista de usuarios </a>
         </div>
         <div class="leave" (click)="Logout()">
             <fa-icon [icon]="leftArrow"></fa-icon>
         </div>
-        <!-- <nav>
-            <ul class="nav-list">
-                <li><a (click)="Logout()">Salir</a></li>
-            </ul>
-        </nav> -->
     </div>
 </section>

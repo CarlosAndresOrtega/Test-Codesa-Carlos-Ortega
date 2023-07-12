@@ -1,9 +1,18 @@
-export interface User{
+export interface userLogin{
     username: string,
     password:string
 }
-export interface UserResponse{
-    message: string,
-    token: string,
-    userID:number,
+export interface DataUser{
+    name:string,
+    email:string,
+    phone: string,
+    direction: string,
+    img?:string
+}
+export const DefaultUser: DataUser={
+    name:'',
+    email:'',
+    phone: '',
+    direction: '',
+    img:''
 }

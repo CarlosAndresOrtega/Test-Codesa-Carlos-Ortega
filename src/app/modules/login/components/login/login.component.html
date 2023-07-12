@@ -7,9 +7,9 @@
 		<div class='form'>
 			<form (ngSubmit)="onSubmit()">
 				<input type="text" placeholder='Usuario' class='text' id="username" name="username" required
-					[(ngModel)]="username"><br>
+					[(ngModel)]="dataLogin.username"><br>
 				<input type="password" placeholder='Contraseña' class='password' id="password" name="password"
-					[(ngModel)]="password" required><br>
+					[(ngModel)]="dataLogin.password" required><br>
 				<button href="#" class='btn-login' id='do-login' type="submit">Ingresar</button>
 			</form>
 		</div>

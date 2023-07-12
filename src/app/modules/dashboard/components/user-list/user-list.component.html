@@ -1,4 +1,50 @@
-<app-header></app-header>
-<div class="container">
-    <p>user-list works!</p>
+<div class="full-screen-component">
+  <div class="content">
+    <div class="container">
+      <div class="player">
+
+
+        <app-header (addUserEvent)="goToAddUser()"></app-header>
+
+
+        <app-user-form 
+        [user]="userSelected" (saveUserEvent)="updateUser($event)" 
+        [ngClass]="{'is-active': showUserForm}"></app-user-form>
+
+
+        <ul class="list__container">
+          <!-- container si lista esta lleno con 1 o mas !!list; else empty list-->
+          <li class="list__item" *ngFor="let item of list; let i=index">
+
+            <img src="https://picsum.photos/200/300" alt="Person" class="item__image">
+            <div class="list__content">
+              <p class="item__name">{{item.name}}</p>
+              <p class="item__name">{{item.email}}</p>
+              <p class="item__name">{{item.phone}}</p>
+              <p class="item__name">{{item.direction}}</p>
+
+
+              <div class="btn__container">
+
+                <button class="btn btn-blue" (click)="goToEditUser(item, i)">
+                  <div class="btnInsideBlue">
+                    <fa-icon [icon]="faPenToSquare"></fa-icon>
+                  </div>
+                </button
+                >
+                <button class="btn btn-red" (click)="deleteUserSelected(item)">
+                  <div class="btnInsideRed">
+                    <fa-icon [icon]="faTrash"></fa-icon>
+                  </div>
+                </button>
+              </div> 
+            </div>
+
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
 </div>
+
