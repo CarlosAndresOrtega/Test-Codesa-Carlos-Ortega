@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 
 
@@ -8,7 +7,7 @@ const routes: Routes = [
   {
     path:'',
     component:UserListComponent,
-  },
+  }
 ];
 
 @NgModule({

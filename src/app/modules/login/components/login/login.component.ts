@@ -18,15 +18,13 @@ export class LoginComponent implements OnInit {
   constructor(private authSvc: AuthService){
 
   }
-  onSubmit() {
-    // Aquí puedes acceder a this.username y this.password para realizar acciones con los datos del formulario
+  onSubmit(): void {
     
     if(this.dataLogin.username=="admin" && this.dataLogin.password=="12345"){
       this.authSvc.login(this.dataLogin.username,this.dataLogin.password)
     }else{
-      alert("Usuario no registrado")  
+      alert("Usuario no registrado, Ingrese por favor con el usuario admin")  
     }
-    
   }
   ngOnInit():void{
 

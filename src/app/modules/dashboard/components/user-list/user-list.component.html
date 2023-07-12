@@ -8,39 +8,47 @@
 
 
         <app-user-form 
-        [user]="userSelected" (saveUserEvent)="updateUser($event)" 
+        [user]="userSelected" 
+        (saveUserEvent)="updateUser($event)"
+        (cancelEvent)="cancelAction()"
         [ngClass]="{'is-active': showUserForm}"></app-user-form>
 
 
         <ul class="list__container">
-          <!-- container si lista esta lleno con 1 o mas !!list; else empty list-->
-          <li class="list__item" *ngFor="let item of list; let i=index">
+          
+          <ng-container *ngIf="users.length > 0; else noUsersMessage">
 
-            <img src="https://picsum.photos/200/300" alt="Person" class="item__image">
-            <div class="list__content">
-              <p class="item__name">{{item.name}}</p>
-              <p class="item__name">{{item.email}}</p>
-              <p class="item__name">{{item.phone}}</p>
-              <p class="item__name">{{item.direction}}</p>
-
-
-              <div class="btn__container">
-
-                <button class="btn btn-blue" (click)="goToEditUser(item, i)">
-                  <div class="btnInsideBlue">
-                    <fa-icon [icon]="faPenToSquare"></fa-icon>
-                  </div>
-                </button
-                >
-                <button class="btn btn-red" (click)="deleteUserSelected(item)">
-                  <div class="btnInsideRed">
-                    <fa-icon [icon]="faTrash"></fa-icon>
-                  </div>
-                </button>
-              </div> 
-            </div>
-
-          </li>
+            <li class="list__item" *ngFor="let user of users; let i=index">
+  
+              <img src="https://picsum.photos/200/300" alt="Person" class="item__image">
+              <div class="list__content">
+                <p class="item__name">{{user.name}}</p>
+                <p class="item__name">{{user.email}}</p>
+                <p class="item__name">{{user.phone}}</p>
+                <p class="item__name">{{user.direction}}</p>
+  
+  
+                <div class="btn__container">
+                  <button class="btn btn-blue" (click)="goToEditUser(user, i)">
+                    <div class="btnInsideBlue">
+                      <fa-icon [icon]="faPenToSquare"></fa-icon>
+                    </div>
+                  </button
+                  >
+                  <button class="btn btn-red" (click)="deleteUserSelected(user)">
+                    <div class="btnInsideRed">
+                      <fa-icon [icon]="faTrash"></fa-icon>
+                    </div>
+                  </button>
+                </div>
+                
+              </div>
+  
+            </li>
+          </ng-container>
+          <ng-template #noUsersMessage>
+            <p class="item__name">No hay usuarios.</p>
+          </ng-template>
         </ul>
 
       </div>

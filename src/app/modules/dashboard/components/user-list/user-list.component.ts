@@ -1,6 +1,6 @@
 import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { BehaviorSubject, Observable, first } from 'rxjs';
+import { Observable } from 'rxjs';
 import {
   DataUser,
   DefaultUser,
@@ -12,11 +12,11 @@ import { UserService } from 'src/app/modules/shared/services/User/user.service';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss'],
 })
-export class UserListComponent {
+export class UserListComponent  {
   faPenToSquare = faPenToSquare;
   faTrash = faTrash;
 
-  list: DataUser[] = [];
+  users: DataUser[] = [];
 
   data$: Observable<DataUser[]>;
   userSelected: DataUser = DefaultUser;
@@ -28,13 +28,13 @@ export class UserListComponent {
   constructor(private user: UserService) {
     this.data$ = this.user.getEvent;
     this.data$.pipe().subscribe((res) => {
-      this.list = res;
+      this.users = res;
     });
   }
 
-  goToEditUser(item: DataUser, i: number): void {
+  goToEditUser(user: DataUser, i: number): void {
     this.showUserForm = true;
-    this.userSelected = item;
+    this.userSelected = user;
     this.userSelectedIndex = i;
     this.isAdding = false;
   }
@@ -45,16 +45,23 @@ export class UserListComponent {
   
   updateUser(event: DataUser): void {
     if (!this.isAdding) {
-      this.list[this.userSelectedIndex] = event;
+      this.users[this.userSelectedIndex] = event;
       this.showUserForm = false;
     } else {
-      this.list.push(event);
+      this.users.push(event);
       this.showUserForm = false;
     }
     this.userSelected = DefaultUser;
-    this.user.setEvent = this.list;
+    this.user.setEvent = this.users;
   }
-  deleteUserSelected(item: DataUser):void{
-    this.user.deleteUser(item);
+  deleteUserSelected(user: DataUser):void{
+    if (confirm('¿Estas seguro que quiere eliminar este usuario?')) {
+      this.user.deleteUser(user);
+    }
+  }
+  cancelAction(){
+    this.userSelected = DefaultUser;
+    this.showUserForm = false;
+
   }
 }

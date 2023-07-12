@@ -6,13 +6,11 @@ export interface DataUser{
     name:string,
     email:string,
     phone: string,
-    direction: string,
-    img?:string
+    direction: string
 }
 export const DefaultUser: DataUser={
     name:'',
     email:'',
     phone: '',
     direction: '',
-    img:''
 }

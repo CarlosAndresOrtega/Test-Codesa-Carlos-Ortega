@@ -1,21 +1,79 @@
 <form [formGroup]="miFormulario" (ngSubmit)="saveUser()">
-  <div>
+  <div class="field">
     <label for="name">Nombre:</label>
-    <input type="text" id="name" name="name"  formControlName="name" required>
-    
+    <input type="text" id="name" name="name" formControlName="name" class="form-control is-invalid" required>
+
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched || name?.value=='')" class="alert alert-danger">
+
+      <div *ngIf="name?.errors?.['required']">
+        Nombre es requerido.
+      </div>
+      <div *ngIf="name?.errors?.['minlength']">
+        El nombre debe tener, al menos, 4 caracteres. 
+      </div>
+    </div>
+
   </div>
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"  formControlName="email" required>
-  </div>
-  <div>
-    <label for="phone">Teléfono:</label>
-    <input type="text" id="phone" name="phone"  formControlName="phone" required>
-  </div>
-  <div>
-    <label for="direction">Dirección:</label>
-    <input type="direction" id="direction" name="direction"  formControlName="direction" required>
+  <div class="field">
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" formControlName="email" required>
+
+    <div *ngIf="email?.invalid && (email?.dirty || email?.touched || email?.value=='')" class="alert alert-danger">
+
+      <div *ngIf="email?.errors?.['required']">
+        Correo electrónico es requerido.
+      </div>
+      <div *ngIf="email?.errors?.['email']">
+        Formato de correo inválido
+      </div>
+    </div>
   </div>
 
-  <button type="submit">Guardar</button>
+  <div class="field">
+    <label for="phone">Teléfono:</label>
+    <input type="text" id="phone" name="phone" formControlName="phone" required>
+    <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched || phone?.value=='')" class="alert alert-danger">
+
+      <div *ngIf="phone?.errors?.['required']">
+        Teléfono es requiredo.
+      </div>
+      <div *ngIf="phone?.errors?.['pattern']">
+        Formato de teléfono inválido.
+      </div>
+      <div *ngIf="phone?.errors?.['maxlength']">
+        El teléfono no debe ser mayor a 15 caracteres, con indicadores.
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label for="direction">Dirección:</label>
+    <input type="direction" id="direction" name="direction" formControlName="direction" required>
+
+    <div *ngIf="direction?.invalid && (direction?.dirty || direction?.touched || direction?.value=='')" class="alert alert-danger">
+
+      <div *ngIf="direction?.errors?.['required']">
+        Dirección es requerida.
+      </div>
+      <div *ngIf="direction?.errors?.['minlength']">
+        La dirección debe tener, al menos, 10 caracteres. 
+      </div>
+    </div>
+
+  </div>
+
+  <div class="btns">
+
+    <button type="submit" [disabled]="!miFormulario.valid" class="btn btn-blue" [ngClass]="{'is-disabled': !miFormulario.valid}" >
+      <div [ngClass]="{'is-disabled': !miFormulario.valid}" class="btnInsideBlue" >
+        <fa-icon [icon]="faFloppyDisk"></fa-icon>
+      </div>
+    </button>
+
+    <button class="btn btn-red" (click)="cancelSave()">
+      <div class="btnInsideRed">
+        <fa-icon [icon]="faXmark"></fa-icon>
+      </div>
+    </button>
+
+  </div>
 </form>
