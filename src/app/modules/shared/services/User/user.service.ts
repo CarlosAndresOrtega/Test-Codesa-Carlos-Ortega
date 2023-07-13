@@ -15,24 +15,24 @@ export class UserService {
    */
   users: DataUser[] = [
     {
-      name: 'Oliva',
-      email: 'caortegayate@gmail.com',
-      phone: '3206807037',
+      name: 'Oliva Cardenas',
+      email: 'oliva1960@gmail.com',
+      phone: '3285903569',
       direction: 'Cr 42 c # 56 c 83',
       img: 'https://vivolabs.es/wp-content/uploads/2022/03/perfil-mujer-vivo.png',
     },
     {
-      name: 'Andres',
+      name: 'Andres David',
       email: 'Andres@gmail.com',
-      phone: '3206807045',
-      direction: 'Cr 42 c # 56 c 83',
+      phone: '31345967831',
+      direction: 'Cl. 18a #24-65',
       img: 'https://e0.pxfuel.com/wallpapers/442/989/desktop-wallpaper-perfil-boy-face-thumbnail.jpg',
     },
     {
-      name: 'Herman',
-      email: 'herman.ortega@gmail.com',
-      phone: '3206807022',
-      direction: 'Cr 42 c # 56 c 83',
+      name: 'Tatiana Fuentes',
+      email: 'tatifuentes2003@gmail.com',
+      phone: '+57-3206807022',
+      direction: 'Cra. 1 #46A-47',
       img: 'https://lapi.com.mx/web/image/product.template/4987/image_1024?unique=2e77332',
     },
   ];
