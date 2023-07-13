@@ -3,56 +3,54 @@
     <div class="container">
       <div class="player">
 
-
+        <!-- Componente de encabezado -->
         <app-header (addUserEvent)="goToAddUser()"></app-header>
 
-
+        <!-- Componente de formulario de usuario -->
         <app-user-form 
-        [user]="userSelected" 
-        (saveUserEvent)="updateUser($event)"
-        (cancelEvent)="cancelAction()"
-        [ngClass]="{'is-active': showUserForm}"></app-user-form>
+          [user]="userSelected" 
+          (saveUserEvent)="updateUser($event)"
+          (cancelEvent)="cancelAction()"
+          [ngClass]="{'is-active': showUserForm}"></app-user-form>
 
-
+        <!-- Contenedor de la lista de usuarios -->
         <ul class="list__container">
-          
-          <ng-container *ngIf="users.length > 0; else noUsersMessage">
 
+          <!-- Lista de usuarios -->
+          <ng-container *ngIf="users.length > 0; else noUsersMessage">
             <li class="list__item" *ngFor="let user of users; let i=index">
-  
-              <img src="https://picsum.photos/200/300" alt="Person" class="item__image">
-              <div class="list__content">
-                <p class="item__name">{{user.name}}</p>
-                <p class="item__name">{{user.email}}</p>
-                <p class="item__name">{{user.phone}}</p>
-                <p class="item__name">{{user.direction}}</p>
-  
-  
+              <div class="top__container">
+                <img src={{user.img}} alt="Person" class="item__image">
                 <div class="btn__container">
+                  <!-- Botón de editar usuario -->
                   <button class="btn btn-blue" (click)="goToEditUser(user, i)">
                     <div class="btnInsideBlue">
                       <fa-icon [icon]="faPenToSquare"></fa-icon>
                     </div>
-                  </button
-                  >
+                  </button>
+                  <!-- Botón de eliminar usuario -->
                   <button class="btn btn-red" (click)="deleteUserSelected(user)">
                     <div class="btnInsideRed">
                       <fa-icon [icon]="faTrash"></fa-icon>
                     </div>
                   </button>
                 </div>
-                
               </div>
-  
+              <div class="list__content">
+                <p class="item__name"> <span>Nombre:</span> {{user.name}}</p>
+                <p class="item__name"><span>Correo:</span> {{user.email}}</p>
+                <p class="item__name"><span>Teléfono:</span> {{user.phone}}</p>
+                <p class="item__name"><span>Dirección:</span> {{user.direction}}</p>
+              </div>
             </li>
           </ng-container>
+
+          <!-- Mensaje cuando no hay usuarios -->
           <ng-template #noUsersMessage>
             <p class="item__name">No hay usuarios.</p>
           </ng-template>
         </ul>
-
       </div>
     </div>
   </div>
 </div>
-

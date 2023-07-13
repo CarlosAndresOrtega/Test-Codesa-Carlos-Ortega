@@ -1,18 +1,25 @@
 <div class="container">
-	<section class='login' id='login'>
-		<div class='head'>
-			<h1 class='company'>Bienvenidos</h1>
-		</div>
-		<p class='msg'>Ingresa tu usuario</p>
-		<div class='form'>
-			<form (ngSubmit)="onSubmit()">
-				<input type="text" placeholder='Usuario' class='text' id="username" name="username" required
-					[(ngModel)]="dataLogin.username"><br>
-				<input type="password" placeholder='Contraseña' class='password' id="password" name="password"
-					[(ngModel)]="dataLogin.password" required><br>
-				<button href="#" class='btn-login' id='do-login' type="submit">Ingresar</button>
-			</form>
-		</div>
+	<!-- Sección de inicio de sesión -->
+	<section class="login" id="login">
+	  <!-- Encabezado -->
+	  <div class="head">
+		<h1 class="company">Bienvenidos</h1>
+	  </div>
+	  <!-- Mensaje de ingreso de usuario -->
+	  <p class="msg">Ingresa tu usuario</p>
+	  <!-- Formulario de inicio de sesión -->
+	  <div class="form">
+		<form (ngSubmit)="onSubmit()">
+		  <!-- Campo de usuario -->
+		  <input type="text" placeholder="Usuario" class="text" id="username" name="username" required
+			[(ngModel)]="dataLogin.username"><br>
+		  <!-- Campo de contraseña -->
+		  <input type="password" placeholder="Contraseña" class="password" id="password" name="password"
+			[(ngModel)]="dataLogin.password" required><br>
+		  <!-- Botón de ingreso -->
+		  <button href="#" class="btn-login" id="do-login" type="submit">Ingresar</button>
+		</form>
+	  </div>
 	</section>
-</div>
-
+  </div>
+  

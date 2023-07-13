@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from './service/auth.service';
 
 
-
+/**
+ * Módulo de servicios esenciales.
+ */
 @NgModule({
   declarations: [],
   imports: [
@@ -12,9 +14,5 @@ import { AuthService } from './service/auth.service';
   providers:[AuthService]
 })
 export class CoreModule { 
-
-  constructor(){
-
-  } 
 
 }

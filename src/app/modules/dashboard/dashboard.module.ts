@@ -9,6 +9,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+/**
+ * Módulo del dashboard
+ */
 @NgModule({
   declarations: [
     HeaderComponent,

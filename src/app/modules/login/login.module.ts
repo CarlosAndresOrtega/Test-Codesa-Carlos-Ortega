@@ -4,7 +4,9 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginRoutingModule } from './login.routes.module';
 import { FormsModule } from '@angular/forms';
 
-
+/**
+ * Módulo de inicio de sesión.
+ */
 @NgModule({
   declarations: [
     LoginComponent,
