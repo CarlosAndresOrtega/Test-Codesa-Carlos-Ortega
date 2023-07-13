@@ -8,6 +8,7 @@ La prueba fue desarrollada en el framework de angular y cuenta con las siguiente
 - El usuario por defecto que se usa es admin y la contraseña es 12345, la sesión usa del Local Storage, para mantener iniciada.
 - Cuenta con los dos componentes solicitados UserListComponent y UserFormComponent, además un componente Header, para reutilizar botones.
 - El UserService como lo indicaba la prueba, solo se usa para la obtención de los usuarios y eliminación de estos. Las funciones de actualizar y añadir nuevo usuario, se realizan con sus respectivos eventos emitidos en el UserFormComponent.
+- Los usuarios poseen una imagen, pero esto solamente es decorativa, ademas de ser opcional en la interfaz, por esta razón cuando se crea un nuevo usuario siempre se agrega la misma imagen de perfil por defecto, ya que la pueda no podia que fuera editable.
 - El código está totalmente documentado, especificando que hace cada variable y función.
 - Por último, el diseño implementado es totalmente responsivo, pensado para ser usado en cualquier dispositivo.
 
